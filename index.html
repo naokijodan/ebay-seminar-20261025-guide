@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月25日セミナー 発表内容のご案内</title>
+<style>
+  :root {
+    --accent: #1a73e8;
+    --accent-light: #e8f0fe;
+    --wrong-bg: #fdecea;
+    --wrong-text: #c62828;
+    --correct-bg: #e6f4ea;
+    --correct-text: #2e7d32;
+    --gray: #607d8b;
+    --navy: #0b2447;
+    --fs-note: 13px;
+    --fs-label: 15px;
+    --fs-body: 16px;
+    --fs-sub: 17px;
+    --fs-heading: 19px;
+    --radius-box: 14px;
+    --radius-band: 10px;
+    --border-w: 2px;
+    --pad-roomy: 16px 18px;
+  }
+  * { box-sizing: border-box; }
+  html, body { max-width: 100%; overflow-x: hidden; }
+  body {
+    margin: 0; padding: 0; background: #f5f7fa; color: #222;
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    font-size: var(--fs-body); line-height: 1.8; word-break: break-word;
+  }
+  header.page-title { background: var(--accent); color: #fff; padding: 28px 16px; text-align: center; }
+  header.page-title h1 { margin: 0; font-size: 22px; line-height: 1.5; }
+  header.page-title .subtitle { margin: 10px auto 0; max-width: 760px; font-size: var(--fs-body); line-height: 1.7; }
+  header.page-title .notice { margin: 12px auto 0; font-size: var(--fs-note); background: rgba(255,255,255,0.18); display: inline-block; padding: 4px 12px; border-radius: 999px; }
+  main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+  section.card { background: #fff; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 24px 32px; margin-bottom: 20px; }
+  h2 { color: var(--accent); font-size: var(--fs-heading); border-left: 6px solid var(--accent); padding-left: 10px; margin-top: 0; }
+  h3 { font-size: var(--fs-sub); color: #333; margin: 22px 0 8px 0; }
+  p { margin: 10px 0; }
+  ul.intro-list { padding-left: 1.2em; margin: 0; }
+  ul.intro-list li { margin-bottom: 8px; }
+  ol.toc { padding-left: 1.4em; margin: 0; }
+  ol.toc li { margin-bottom: 6px; }
+  a { color: var(--accent); }
+  .small-note { font-size: var(--fs-note); color: #666; margin: 8px 0; }
+  .source-note { font-size: var(--fs-note); color: #666; margin: 8px 0 0 0; }
+  .point-box {
+    background: var(--accent-light); border: var(--border-w) solid var(--accent); border-radius: var(--radius-box);
+    padding: var(--pad-roomy); margin: 16px 0; font-weight: bold; font-size: var(--fs-heading); color: #0b3d91; text-align: center;
+  }
+  .formula-box {
+    background: #eeeeee; border: var(--border-w) solid #555; border-radius: var(--radius-band);
+    padding: 14px 16px; margin: 16px 0; text-align: center; font-weight: bold; font-size: var(--fs-label);
+  }
+  .caution-box { background: var(--wrong-bg); border: var(--border-w) solid var(--wrong-text); border-radius: var(--radius-box); padding: var(--pad-roomy); margin: 16px 0; }
+  .ok-box { background: var(--correct-bg); border: var(--border-w) solid var(--correct-text); border-radius: var(--radius-box); padding: var(--pad-roomy); margin: 16px 0; }
+  .plain-box { background: #f5f5f5; border: var(--border-w) solid var(--gray); border-radius: var(--radius-box); padding: var(--pad-roomy); margin: 16px 0; }
+  .ok-box h3, .caution-box h3, .plain-box h3 { margin-top: 0; }
+  .ok-box p:last-child, .caution-box p:last-child, .plain-box p:last-child { margin-bottom: 0; }
+  ol.points { padding-left: 1.4em; }
+  ol.points li { margin-bottom: 12px; }
+  ol.points li strong { color: #0b3d91; }
+  .link-line { margin: 14px 0 4px 0; }
+  .link-line a { font-weight: bold; }
+  .groups { display: flex; gap: 12px; margin: 16px 0; }
+  .group-box { flex: 1 1 0; min-width: 0; border-radius: var(--radius-box); padding: var(--pad-roomy); }
+  .group-box.g1 { background: var(--accent-light); border: var(--border-w) solid var(--accent); }
+  .group-box.g2 { background: #fff; border: var(--border-w) solid var(--gray); }
+  .group-box.g3 { background: var(--wrong-bg); border: var(--border-w) solid var(--wrong-text); }
+  .group-box .gl { font-size: var(--fs-note); font-weight: bold; color: #555; }
+  .group-box .gt { font-size: var(--fs-sub); font-weight: bold; margin: 2px 0 6px; line-height: 1.5; }
+  .group-box .gb { font-size: var(--fs-label); line-height: 1.7; color: #333; }
+  .group-box .gn { font-size: var(--fs-label); font-weight: bold; margin-top: 8px; }
+  /* tables */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 14px 0; border: 1px solid #ddd; border-radius: var(--radius-band); }
+  table.data { border-collapse: collapse; width: 100%; font-size: var(--fs-label); background: #fff; }
+  table.data caption { caption-side: top; text-align: left; font-size: var(--fs-note); color: #555; padding: 8px 12px; background: #fafafa; border-bottom: 1px solid #ddd; }
+  table.data th, table.data td { border-bottom: 1px solid #e3e3e3; padding: 8px 10px; text-align: left; line-height: 1.5; white-space: nowrap; }
+  table.data thead th { background: var(--navy); color: #fff; text-align: center; font-weight: bold; }
+  table.data thead th .sub { font-weight: normal; font-size: var(--fs-note); }
+  table.data tbody th { text-align: left; font-weight: bold; background: #f5f7fa; }
+  table.data.fee td, table.data.country td { text-align: center; }
+  table.data.fee td { text-align: right; }
+  table.data.country td.ok { color: var(--correct-text); font-weight: bold; }
+  table.data.country td.ng { color: var(--wrong-text); font-weight: bold; background: #fff6f5; }
+  table.data.country tr.g-ddp th { box-shadow: inset 4px 0 0 var(--accent); }
+  table.data.country tr.g-dap th { box-shadow: inset 4px 0 0 var(--gray); }
+  table.data.country tr.g-none th { box-shadow: inset 4px 0 0 var(--wrong-text); }
+  table.data.wrapok th, table.data.wrapok td { white-space: normal; }
+  table.data.country thead th:first-child, table.data.fee thead th:first-child { text-align: left; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: var(--fs-note); color: #444; margin: 6px 0 0; }
+  .legend span::before { content: ""; display: inline-block; width: 4px; height: 12px; margin-right: 6px; vertical-align: -1px; }
+  .legend .l1::before { background: var(--accent); }
+  .legend .l2::before { background: var(--gray); }
+  .legend .l3::before { background: var(--wrong-text); }
+  .zone-list { margin: 8px 0; padding-left: 1.2em; }
+  .zone-list li { margin-bottom: 4px; }
+  ul.links { padding-left: 1.2em; margin: 0; }
+  ul.links li { margin-bottom: 8px; }
+  footer { font-size: var(--fs-note); color: #777; padding: 20px 16px 40px 16px; max-width: 1100px; margin: 0 auto; }
+  footer ul { padding-left: 1.2em; margin: 6px 0; }
+  footer p.center { text-align: center; color: #999; }
+  h1, h2, h3, .point-box, .formula-box { word-break: auto-phrase; text-wrap: balance; }
+  @media (max-width: 700px) {
+    section.card { padding: 20px 16px; }
+    .groups { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-title">
+  <h1>10月25日セミナー 発表内容のご案内</h1>
+  <p class="subtitle">4つの話題（税関申告価額／けんさく君／利益早見表／シッピングポリシーの変更）と、開発中の拡張機能についてご紹介します。</p>
+  <p class="notice">開催時間・場所は主催者の案内をご確認ください</p>
+</header>
+
+<main>
+
+  <section class="card">
+    <h2>目次</h2>
+    <ol class="toc">
+      <li><a href="#part1">PART1　税関申告価額</a></li>
+      <li><a href="#part2">PART2　けんさく君</a></li>
+      <li><a href="#part3">PART3　利益早見表</a></li>
+      <li><a href="#part4">PART4　シッピングポリシーの変更</a>
+        <ul>
+          <li><a href="#p4a">きっかけと「約束」の考え方</a></li>
+          <li><a href="#p4b">何を変えたか</a></li>
+          <li><a href="#p4c">国別の対応表（日本郵便公式）</a></li>
+          <li><a href="#p4d">2027年2月1日からの国際郵便料金改定</a></li>
+          <li><a href="#p4e">皆さんがすること</a></li>
+        </ul>
+      </li>
+      <li><a href="#dev">開発中の拡張機能</a></li>
+      <li><a href="#links">関連リンク一覧</a></li>
+    </ol>
+    <p class="small-note">当日のスライドの内容をもとに、記事の形でまとめました。進行の目安は、税関申告価額8分、けんさく君6分、利益早見表6分、シッピングポリシー5分、そのほかの紹介3分です。</p>
+  </section>
+
+  <section class="card" id="part1">
+    <h2>PART1　税関申告価額</h2>
+    <p>送料込みで売った商品を、税関にいくらで申告するかのお話です。考え方、発送先ごとのメリット、計算の手順、注意点の順に説明します。</p>
+
+    <ol class="points">
+      <li><strong>申告するのは、送料を抜いた商品代金です。</strong>販売価格をそのまま申告するのは誤りで、送料の分まで課税の対象になってしまいます。「運送申告価額」（配送会社に申告する、補償の上限を決める金額）と「税関申告価額」（税関に申告する、関税などを決める基準の金額）は別物です。米国税関（CBP）の資料でも、課税の基準は国際輸送・保険などの費用を除いた、買い手が売り手に支払う総額とされています。</li>
+      <li><strong>送料を抜くと、発送先ごとにメリットがあります。</strong>参考例では、販売価格85ドルの内訳が商品代65ドルと送料20ドルで、税関申告価額は 85 − 20 ＝ 65ドルです（関税18ドルは販売価格に入れず、シッピングポリシーの送料の欄で別に請求します）。米国向けは、送料20ドル × 関税率12% × 150円 ＝ 360円分の関税がかからなくなります。送料100ドルなら1,800円で、送料が高いほど差も大きくなります。米国以外は国によって計算方法が異なります。EU・英国は税関が輸送費を別に加算するため、送料を混ぜて申告すると重なって高い課税価格になるおそれがあります（EU関税法典第71条(1)(e)）。金額はすべて説明用の参考例です。</li>
+      <li><strong>計算は引き算ひとつで、拡張機能が自動でやってくれます。</strong>「HSコードワークシート作成君」の「申告価格の計算」を使い、画面の番号の順に5つの操作をします。式は「販売価格（USD）−（運送料金＋混雑時割増金＋燃料割増金）÷ 為替レート」です。例として、販売価格112.00ドルから、送料4,227円（2,797円＋98円＋1,332円）を157.27円で割った26.88ドルを引くと、申告価格は85.12ドルになります。</li>
+    </ol>
+
+    <div class="caution-box">
+      <h3>気をつける4つのこと</h3>
+      <ul class="intro-list">
+        <li>同梱発送は、送料を商品ごとに割合で分けて（按分して）から、それぞれの商品代から引きます。</li>
+        <li>引きすぎないこと。申告価格が実際の商品代を下回ると過少申告になります。</li>
+        <li>引くのは実際の運送費だけです。推定関税や処理手数料は引きません。</li>
+        <li>補償用の「運送申告価額」の欄とは別です。</li>
+      </ul>
+    </div>
+
+    <p class="link-line">👉 詳しい手順の解説記事：<a href="https://naokijodan.github.io/ebay-declared-value-guide/" target="_blank" rel="noopener">https://naokijodan.github.io/ebay-declared-value-guide/</a></p>
+  </section>
+
+  <section class="card" id="part2">
+    <h2>PART2　けんさく君</h2>
+    <p>テラピークとメルカリの検索条件、そしてセラーを保存しておき、いつもの検索をワンクリックで開けるようにするChrome拡張機能（サイドパネル）です。リサーチのたびに同じ条件を入れ直す手間をなくします。</p>
+
+    <ol class="points">
+      <li><strong>検索条件とセラーを保存して、ワンクリックで開きます。</strong>パネルの中でキーワード・期間・カテゴリ・商品の状態・出品形式・価格・出品者所在地・並び順などをまとめて入れ、「テラピークを開く」を押すと、その条件の検索結果が新しいタブで開きます。よく使う検索は名前を付けて保存でき、一覧の「開く」を押すだけで同じ検索が再現されます。期間は日付ではなく「30日」のように保存するので、いつ開いても直近30日になります。参考にしているセラーも、表示名とメモを付けて保存できます。見ているページの上で右クリックして「けんさく君に保存」を選ぶ方法もあります。</li>
+      <li><strong>保存した検索条件はフォルダで整理できます（v1.5.0）。</strong>100件以上ためられます。保存するときに新しいフォルダを作れて、フォルダを削除しても中身は「未分類」に移るだけで消えません。一覧の上の窓で絞り込みができ（保存名・キーワード・除外キーワード・フォルダ名が対象）、並び順は登録順・名前順・最近開いた順から選べて、選んだ順は次回も続きます。以前の保存データは、新しい版で最初にパネルを開いたときに自動で引き継がれます。</li>
+      <li><strong>文字を選んで右クリックすると、どのページからでも検索できます（v1.4.0）。</strong>「“文字”をメルカリで検索」は新しいタブですぐメルカリを検索し、「“文字”をけんさく君で検索」はサイドパネルを開いて、テラピークとメルカリ両方のキーワード欄に文字を入れます（検索は自分で「開く」を押します）。メルカリには、商品の状態「新品〜やや傷や汚れあり」・送料込み・販売中・通常出品の4つが既定条件として自動で付きます。選んだ文字だけを受け取り、ページの内容やURLは読みません。</li>
+    </ol>
+
+    <p class="small-note">右クリックは、パネルの中ではなくページの上で行います。右クリックのメニューが出るのはebay.comとmercari.comで、ほかのサイトはURLを貼り付けて保存します。</p>
+
+    <p class="link-line">👉 Chrome ウェブストア：<a href="https://chromewebstore.google.com/detail/lglbjdkepaokbfgeapogenjmadlmkbnk" target="_blank" rel="noopener">https://chromewebstore.google.com/detail/lglbjdkepaokbfgeapogenjmadlmkbnk</a></p>
+    <p class="link-line">👉 テラピークのJapan絞り込みガイド：<a href="https://naokijodan.github.io/ebay-research-japan-filter-guide/" target="_blank" rel="noopener">https://naokijodan.github.io/ebay-research-japan-filter-guide/</a></p>
+  </section>
+
+  <section class="card" id="part3">
+    <h2>PART3　利益早見表</h2>
+    <p>入れるのは、仕入れと送料だけ。広告費率と利益の組み合わせを表にして、オファー対応と仕入れ判断に使います。拡張機能はサイドパネルで商品ページの横に表示でき、同じ内容のウェブ版もあります。手数料・関税・為替は設定に置いておくので毎回入れ直す必要がなく、為替は右上のボタンで最新を取得できます。</p>
+
+    <ol class="points">
+      <li><strong>オファーは、いくらまで受けられるかが分かります。</strong>例（仕入れ5,000円・送料1,500円・広告費率10%、為替157.32円）では、利益率0%で出品価格59.03ドル（利益0円）、5%で63.57ドル（500円）、10%で68.86ドル（1,083円）、15%で75.12ドル（1,772円）です。62ドルのオファーが来たら、59.03ドルより高いので赤字ではなく、63.57ドルより低いので利益率5%には届かない、とすぐ判断できます。利益率0%の行が損益ゼロの線で、オファーの下限の目安になります。</li>
+      <li><strong>この価格で売るなら、仕入れはいくらまでかが分かります。</strong>「仕入れ価格早見表」のタブに切り替え、売れそうな価格と送料を入れます。例（販売価格100ドル・送料1,500円・広告費率10%）では、仕入れ価格の上限は利益率0%で9,512円、5%で8,725円、10%で7,938円、15%で7,152円です。仕入れ値が7,500円なら、利益率10%は狙えて、15%には届きません。</li>
+      <li><strong>送料計算と電卓も、同じ画面で使えます。</strong>送料計算は、重さとサイズを入れると6つの配送方法（ePacket／Cpass-Economy／EMS／Cpass-FedEx／Cpass-DHL／eLogistics）の送料を表示し、送れない方法は「対象外」と出ます。「この送料を使う」で送料の欄に入ります。電卓は、コピーした金額を貼り付けると数字だけに整え（US $45.99 → 45.99）、円とドルの換算や、結果を仕入れ・送料・価格の欄に入れるボタンが付いています。</li>
+    </ol>
+
+    <p class="small-note">金額は設定値に基づく目安です。実際の手数料・関税・送料・為替とは異なる場合があります。</p>
+
+    <p class="link-line">👉 ウェブ版：<a href="https://naokijodan.github.io/profit-matrix/" target="_blank" rel="noopener">https://naokijodan.github.io/profit-matrix/</a></p>
+    <p class="link-line">👉 Chrome ウェブストア：<a href="https://chromewebstore.google.com/detail/eieeoceidiibbdahkjcnichcdmieghel" target="_blank" rel="noopener">https://chromewebstore.google.com/detail/eieeoceidiibbdahkjcnichcdmieghel</a></p>
+  </section>
+
+  <section class="card" id="part4">
+    <h2>PART4　シッピングポリシーの変更</h2>
+    <p>エコノミーの配送を、SpeedPAK Economyで約束する形から「日本郵便」で約束する形に切り替えた理由と、その中身を説明します。</p>
+
+    <h3 id="p4a">a. きっかけと「約束」の考え方</h3>
+    <p>きっかけは、Zonos（ゾノス）で関税を前払いできるようになったことです。アメリカ向けの郵便で関税を払う形で送るには、Zonosでの前払いが必要でした。</p>
+    <ul class="intro-list">
+      <li><strong>段階1（ポリシー切り替えは8月10日）：</strong>まずアメリカ向け。Zonosで関税を前払いできるようになり、日本郵便の国際郵便（エコノミー）がアメリカ向けに使えるようになりました。</li>
+      <li><strong>段階2（10月1日から、同日に切り替え）：</strong>ヨーロッパの一部も。日本郵便と提携するZonosが、EUの11か国宛てで関税の前払いに対応し、その国にも日本郵便のエコノミーが使えるようになりました。</li>
+    </ul>
+    <p>これで「日本郵便のエコノミー」が、SpeedPAK Economyと並ぶ選択肢になりました。</p>
+
+    <div class="point-box">ポリシーは「お届け日数の約束」。郵便で約束しておけば、SpeedPAKで送ってもよい。逆は違反です。</div>
+
+    <div class="ok-box">
+      <h3>○　日本郵便のエコノミーで約束</h3>
+      <p>約束は11〜23営業日。郵便で送っても、SpeedPAK Economy（8〜12営業日）で送ってもかまいません。約束より速く届く分はOKです。</p>
+    </div>
+    <div class="caution-box">
+      <h3>×　SpeedPAK Economyで約束</h3>
+      <p>約束は8〜12営業日。郵便で送ると約束より遅れるおそれがあり、ポリシー違反になります。</p>
+    </div>
+    <p>日本郵便のエコノミーの方が安いケースが多いので、郵便で約束しておけば、毎回「安い方・使える方」を選べます。</p>
+    <p class="small-note">日数はアメリカ向けの例（Economy Shipping from outside US ／ eBay SpeedPAK Economy）です。ヨーロッパ向けも同じ考え方ですが、日数は異なります。</p>
+
+    <h3 id="p4b">b. 何を変えたか</h3>
+    <p>実際に変えたのは次の2つです。配送サービスの名前をSpeedPAK Economyから日本郵便側のエコノミーに変えただけで、送料は据え置きです。</p>
+    <div class="table-wrap"><table class="data wrapok"><thead><tr><th>日付</th><th>向け先</th><th>変更前</th><th>変更後</th><th>送料</th></tr></thead><tbody>
+      <tr><th scope="row">8月10日</th><td>アメリカ向け</td><td>eBay SpeedPAK Economy</td><td>Economy Shipping from outside US</td><td>据え置き</td></tr>
+      <tr><th scope="row">10月1日</th><td>ヨーロッパ向け（フランス・ヨーロッパのレーン）</td><td>eBay SpeedPAK Economy</td><td>Economy International</td><td>据え置き</td></tr>
+    </tbody></table></div>
+    <p class="small-note">10月1日の対象は中古向けのポリシー（eco_used・game_used）です。9月7日には、アメリカ向けにSpeedPAK Economy／Expeditedを追加料金の選択肢として追加しました。</p>
+
+    <div class="plain-box">
+      <h3>Zonosで前払いできるヨーロッパの国・地域</h3>
+      <p>EU 11か国：イタリア、エストニア、オランダ、スウェーデン、スペイン、スロバキア、デンマーク、フィンランド、フランス、マルタ、ルクセンブルク。</p>
+      <p>ほかに、アンドラ、モナコ、グアドループ、フランス領ギアナ、マルティニーク（Zonosアプリの配送先一覧、2026年10月12日時点）。</p>
+    </div>
+    <div class="plain-box">
+      <h3>対応していない国はSpeedPAKで送る</h3>
+      <p>ドイツ、オーストリア、ベルギー、チェコ、ポルトガルなど。送料を据え置いたのは、SpeedPAKでしか届けられない国が残るためです。</p>
+    </div>
+
+    <h3 id="p4c">c. 国別の対応表（日本郵便公式）</h3>
+    <p>日本郵便の公式の表で、国ごとに使える支払方法が決まっています。eBayの150ユーロ未満の注文はIOSS利用ありの扱いです（VATはeBayが徴収します）。下の表は、日本郵便のお知らせ（続報4、2026年10月1日）の「IOSS制度の利用有無およびDDP／DAPに応じた国別差出条件」を、そのまま転記したものです（32の国・地域）。</p>
+    <p class="small-note">表は横にスクロールできます。</p>
+    <div class="table-wrap"><table class="data country"><caption>IOSS制度の利用有無およびDDP／DAPに応じた国別差出条件（日本郵便公式の表を転記。〇＝差し出せる、×＝差し出せない）</caption><thead><tr><th>国・地域</th><th>IOSS有り<br>DDP<br><span class="sub">Zonosで前払い</span></th><th>IOSS有り<br>DAP<br><span class="sub">受取人払い</span></th><th>IOSS無し<br>DAP</th></tr></thead><tbody><tr class="g-dap"><th scope="row">アイルランド</th><td class="ng">×</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">イタリア</th><td class="ok">〇</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">エストニア</th><td class="ok">〇</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-none"><th scope="row">オーストリア</th><td class="ng">×</td><td class="ng">×</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">オランダ</th><td class="ok">〇</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">ガドループ</th><td class="ok">〇</td><td class="ng">×</td><td class="ok">〇</td></tr><tr class="g-dap"><th scope="row">キプロス</th><td class="ng">×</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-dap"><th scope="row">ギリシャ</th><td class="ng">×</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-dap"><th scope="row">クロアチア</th><td class="ng">×</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">スウェーデン</th><td class="ok">〇</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">スペイン</th><td class="ok">〇</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">スロバキア</th><td class="ok">〇</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-dap"><th scope="row">スロベニア</th><td class="ng">×</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-none"><th scope="row">チェコ</th><td class="ng">×</td><td class="ng">×</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">デンマーク</th><td class="ok">〇</td><td class="ng">×</td><td class="ok">〇</td></tr><tr class="g-none"><th scope="row">ドイツ</th><td class="ng">×</td><td class="ng">×</td><td class="ok">〇</td></tr><tr class="g-dap"><th scope="row">ハンガリー</th><td class="ng">×</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">フィンランド</th><td class="ok">〇</td><td class="ng">×</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">フランス</th><td class="ok">〇</td><td class="ng">×</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">仏領ギアナ</th><td class="ok">〇</td><td class="ng">×</td><td class="ok">〇</td></tr><tr class="g-dap"><th scope="row">ブルガリア</th><td class="ng">×</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-none"><th scope="row">ベルギー</th><td class="ng">×</td><td class="ng">×</td><td class="ok">〇</td></tr><tr class="g-dap"><th scope="row">ポーランド</th><td class="ng">×</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-none"><th scope="row">ポルトガル</th><td class="ng">×</td><td class="ng">×</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">マルタ</th><td class="ok">〇</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">マルチニーク</th><td class="ok">〇</td><td class="ng">×</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">モナコ</th><td class="ok">〇</td><td class="ng">×</td><td class="ok">〇</td></tr><tr class="g-dap"><th scope="row">ラトビア</th><td class="ng">×</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-dap"><th scope="row">リトアニア</th><td class="ng">×</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-dap"><th scope="row">ルーマニア</th><td class="ng">×</td><td class="ok">〇</td><td class="ok">〇</td></tr><tr class="g-ddp"><th scope="row">ルクセンブルク</th><td class="ok">〇</td><td class="ng">×</td><td class="ok">〇</td></tr><tr class="g-none"><th scope="row">レユニオン</th><td class="ng">×</td><td class="ng">×</td><td class="ok">〇</td></tr></tbody></table></div>
+    <div class="legend"><span class="l1">DDP〇（Zonosで前払い可）</span><span class="l2">DDP×・DAP〇（受取人払いのみ）</span><span class="l3">DDP×・DAP×（IOSS有りでは差し出せない）</span></div>
+    <p class="small-note">表記は公式の表のとおりです。「ガドループ」はグアドループ、「仏領ギアナ」はフランス領ギアナのことです。アンドラは公式のこの表に載っていません（Zonosアプリの一覧にのみ記載があります）。IOSS利用なし（受取人払い）の郵便は、32の国・地域すべてで差し出せます。</p>
+
+    <h3>3つのグループにまとめると</h3>
+    <div class="groups">
+      <div class="group-box g1">
+        <div class="gl">DDP ○</div>
+        <div class="gt">Zonosで前払いして郵便で送れる：15の国・地域</div>
+        <div class="gb">イタリア、エストニア、オランダ、スウェーデン、スペイン、スロバキア、デンマーク、フィンランド、フランス、マルタ、ルクセンブルク、モナコ、グアドループ、フランス領ギアナ、マルティニーク</div>
+      </div>
+      <div class="group-box g2">
+        <div class="gl">DDP ×</div>
+        <div class="gt">郵便は受取人払い（DAP）のみ：11か国</div>
+        <div class="gb">アイルランド、キプロス、ギリシャ、クロアチア、スロベニア、ハンガリー、ブルガリア、ポーランド、ラトビア、リトアニア、ルーマニア</div>
+      </div>
+      <div class="group-box g3">
+        <div class="gl">DDP ×・DAP ×</div>
+        <div class="gt">IOSSありでは郵便で出せない：6の国・地域</div>
+        <div class="gb">ドイツ、オーストリア、ベルギー、チェコ、ポルトガル、レユニオン</div>
+        <div class="gn">→ これまでどおりSpeedPAKで送る</div>
+      </div>
+    </div>
+    <p>受取人払いだけの11か国も、Zonosが使えないので実務上はSpeedPAKになります。これまではヨーロッパ全体をSpeedPAK Economyで約束するしかありませんでした。郵便で約束しておけば、国ごとにZonos（郵便）とSpeedPAKの安い方を選べます。SpeedPAKの送料がとても高い国もあるので、差は大きくなります。</p>
+    <p class="source-note">出典：日本郵便 お知らせ（続報4、2026年10月1日）<br>👉 <a href="https://www.post.japanpost.jp/service/send/oversea/information/2026/1001_01.html" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/2026/1001_01.html</a></p>
+
+    <h3 id="p4d">d. <span style="white-space:nowrap">2027年2月1日</span>からの国際郵便料金改定</h3>
+    <p>2027年2月1日から、日本郵便の国際郵便料金が変わります（2026年10月9日発表）。理由は国際輸送費と海外配達費の上昇で、EMS・小包・小形包装物・国際エアパケットなどが対象です。下に、セラーがよく使う2つの料金表を公式の新料金表からそのまま転記します（重さの区分は20段階、地帯は5つ）。</p>
+
+    <div class="plain-box">
+      <h3>地帯の区分</h3>
+      <ul class="zone-list">
+        <li>第1地帯：中国・韓国・台湾</li>
+        <li>第2地帯：アジア（中国・韓国・台湾を除く）</li>
+        <li>第3地帯：オセアニア・中近東・カナダ・メキシコ・ヨーロッパ</li>
+        <li>第4地帯：米国（海外領土を含む）</li>
+        <li>第5地帯：中南米（メキシコを除く）・アフリカ</li>
+      </ul>
+      <p class="small-note">ヨーロッパは第3地帯、アメリカは第4地帯です。第3地帯にはカナダ・オセアニア・中近東も含まれます。</p>
+    </div>
+
+    <p class="small-note">表は横にスクロールできます。</p>
+    <div class="table-wrap"><table class="data fee"><caption>小形包装物（航空扱い）　新料金（2027年2月1日から）</caption><thead><tr><th>重量</th><th>第1地帯</th><th>第2地帯</th><th>第3地帯</th><th>第4地帯</th><th>第5地帯</th></tr></thead><tbody><tr><th scope="row">100gまで</th><td>620円</td><td>680円</td><td>800円</td><td>1,290円</td><td>950円</td></tr><tr><th scope="row">200gまで</th><td>770円</td><td>830円</td><td>990円</td><td>1,550円</td><td>1,220円</td></tr><tr><th scope="row">300gまで</th><td>920円</td><td>980円</td><td>1,180円</td><td>1,810円</td><td>1,490円</td></tr><tr><th scope="row">400gまで</th><td>1,070円</td><td>1,130円</td><td>1,370円</td><td>2,070円</td><td>1,760円</td></tr><tr><th scope="row">500gまで</th><td>1,220円</td><td>1,280円</td><td>1,560円</td><td>2,330円</td><td>2,030円</td></tr><tr><th scope="row">600gまで</th><td>1,370円</td><td>1,430円</td><td>1,750円</td><td>2,590円</td><td>2,300円</td></tr><tr><th scope="row">700gまで</th><td>1,520円</td><td>1,580円</td><td>1,940円</td><td>2,850円</td><td>2,570円</td></tr><tr><th scope="row">800gまで</th><td>1,670円</td><td>1,730円</td><td>2,130円</td><td>3,110円</td><td>2,840円</td></tr><tr><th scope="row">900gまで</th><td>1,820円</td><td>1,880円</td><td>2,320円</td><td>3,370円</td><td>3,110円</td></tr><tr><th scope="row">1.0kgまで</th><td>1,970円</td><td>2,030円</td><td>2,510円</td><td>3,630円</td><td>3,380円</td></tr><tr><th scope="row">1.1kgまで</th><td>2,120円</td><td>2,180円</td><td>2,700円</td><td>3,890円</td><td>3,650円</td></tr><tr><th scope="row">1.2kgまで</th><td>2,270円</td><td>2,330円</td><td>2,890円</td><td>4,150円</td><td>3,920円</td></tr><tr><th scope="row">1.3kgまで</th><td>2,420円</td><td>2,480円</td><td>3,080円</td><td>4,410円</td><td>4,190円</td></tr><tr><th scope="row">1.4kgまで</th><td>2,570円</td><td>2,630円</td><td>3,270円</td><td>4,670円</td><td>4,460円</td></tr><tr><th scope="row">1.5kgまで</th><td>2,720円</td><td>2,780円</td><td>3,460円</td><td>4,930円</td><td>4,730円</td></tr><tr><th scope="row">1.6kgまで</th><td>2,870円</td><td>2,930円</td><td>3,650円</td><td>5,190円</td><td>5,000円</td></tr><tr><th scope="row">1.7kgまで</th><td>3,020円</td><td>3,080円</td><td>3,840円</td><td>5,450円</td><td>5,270円</td></tr><tr><th scope="row">1.8kgまで</th><td>3,170円</td><td>3,230円</td><td>4,030円</td><td>5,710円</td><td>5,540円</td></tr><tr><th scope="row">1.9kgまで</th><td>3,320円</td><td>3,380円</td><td>4,220円</td><td>5,970円</td><td>5,810円</td></tr><tr><th scope="row">2.0kgまで</th><td>3,470円</td><td>3,530円</td><td>4,410円</td><td>6,230円</td><td>6,080円</td></tr></tbody></table></div>
+    <div class="table-wrap"><table class="data fee"><caption>国際エアパケット郵便物（国際特定記録とする航空扱いの小形包装物）　新料金（2027年2月1日から）</caption><thead><tr><th>重量</th><th>第1地帯</th><th>第2地帯</th><th>第3地帯</th><th>第4地帯</th><th>第5地帯</th></tr></thead><tbody><tr><th scope="row">100gまで</th><td>1,010円</td><td>1,070円</td><td>1,190円</td><td>1,680円</td><td>1,340円</td></tr><tr><th scope="row">200gまで</th><td>1,160円</td><td>1,220円</td><td>1,380円</td><td>1,940円</td><td>1,610円</td></tr><tr><th scope="row">300gまで</th><td>1,310円</td><td>1,370円</td><td>1,570円</td><td>2,200円</td><td>1,880円</td></tr><tr><th scope="row">400gまで</th><td>1,460円</td><td>1,520円</td><td>1,760円</td><td>2,460円</td><td>2,150円</td></tr><tr><th scope="row">500gまで</th><td>1,610円</td><td>1,670円</td><td>1,950円</td><td>2,720円</td><td>2,420円</td></tr><tr><th scope="row">600gまで</th><td>1,760円</td><td>1,820円</td><td>2,140円</td><td>2,980円</td><td>2,690円</td></tr><tr><th scope="row">700gまで</th><td>1,910円</td><td>1,970円</td><td>2,330円</td><td>3,240円</td><td>2,960円</td></tr><tr><th scope="row">800gまで</th><td>2,060円</td><td>2,120円</td><td>2,520円</td><td>3,500円</td><td>3,230円</td></tr><tr><th scope="row">900gまで</th><td>2,210円</td><td>2,270円</td><td>2,710円</td><td>3,760円</td><td>3,500円</td></tr><tr><th scope="row">1.0kgまで</th><td>2,360円</td><td>2,420円</td><td>2,900円</td><td>4,020円</td><td>3,770円</td></tr><tr><th scope="row">1.1kgまで</th><td>2,510円</td><td>2,570円</td><td>3,090円</td><td>4,280円</td><td>4,040円</td></tr><tr><th scope="row">1.2kgまで</th><td>2,660円</td><td>2,720円</td><td>3,280円</td><td>4,540円</td><td>4,310円</td></tr><tr><th scope="row">1.3kgまで</th><td>2,810円</td><td>2,870円</td><td>3,470円</td><td>4,800円</td><td>4,580円</td></tr><tr><th scope="row">1.4kgまで</th><td>2,960円</td><td>3,020円</td><td>3,660円</td><td>5,060円</td><td>4,850円</td></tr><tr><th scope="row">1.5kgまで</th><td>3,110円</td><td>3,170円</td><td>3,850円</td><td>5,320円</td><td>5,120円</td></tr><tr><th scope="row">1.6kgまで</th><td>3,260円</td><td>3,320円</td><td>4,040円</td><td>5,580円</td><td>5,390円</td></tr><tr><th scope="row">1.7kgまで</th><td>3,410円</td><td>3,470円</td><td>4,230円</td><td>5,840円</td><td>5,660円</td></tr><tr><th scope="row">1.8kgまで</th><td>3,560円</td><td>3,620円</td><td>4,420円</td><td>6,100円</td><td>5,930円</td></tr><tr><th scope="row">1.9kgまで</th><td>3,710円</td><td>3,770円</td><td>4,610円</td><td>6,360円</td><td>6,200円</td></tr><tr><th scope="row">2.0kgまで</th><td>3,860円</td><td>3,920円</td><td>4,800円</td><td>6,620円</td><td>6,470円</td></tr></tbody></table></div>
+    <p class="small-note">国際エアパケットは、国際特定記録とする航空扱いの小形包装物です。書状や印刷物なども改定されます。</p>
+
+    <div class="plain-box">
+      <h3>EMS・航空小包の「特別追加料金」は0円に</h3>
+      <p>上昇分を本体料金に反映するため、EMS・航空小包の特別追加料金は、改定と同時に0円になります。</p>
+    </div>
+    <p>公式ページには現行料金との比較が出ていないため、この記事では値上げ幅には触れません。今の料金は、日本郵便の現行料金表と比べてご確認ください。</p>
+
+    <div class="point-box">やることは変わりません。ポリシーは郵便で約束しておき、改定後も毎回、郵便とSpeedPAKの安い方を選びます。</div>
+
+    <p class="source-note">出典：日本郵便 お知らせ「国際郵便料金の一部改定のお知らせ（2027年2月1日から）」<br>
+      👉 公式ページ：<a href="https://www.post.japanpost.jp/service/send/oversea/information/fee_revision_2027/" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/fee_revision_2027/</a><br>
+      👉 公式の新料金表（PDF）：<a href="https://www.post.japanpost.jp/service/send/oversea/information/fee_revision_2027/charges.pdf" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/fee_revision_2027/charges.pdf</a></p>
+
+    <h3 id="p4e">e. 皆さんがすること</h3>
+    <ol class="points">
+      <li><strong>自分のポリシーの「約束」を確認します。</strong>8〜12営業日の約束ならSpeedPAK Economy（CPaSS）一択です。11〜23営業日なら、郵便でもSpeedPAKでもかまいません。</li>
+      <li><strong>郵便で送るなら、Zonosで関税を前払いします。</strong>アメリカ向けは手数料が1件あたり約570円で、差し出しは各都道府県の比較的大きな郵便局だけです。ヨーロッパ向けは、国際郵便を扱うすべての郵便局で差し出せます。</li>
+      <li><strong>しきい値を超えたらクーリエで送ります。</strong>EUは150ユーロ、イギリスは135ポンドです。超えるとSpeedPAK Economyは使えず、SpeedPAK Expeditedで送ります。判定は注文単位です。</li>
+    </ol>
+    <p>詳しい手順は、次の3つの解説記事にあります。</p>
+    <p class="link-line">👉 エコノミー発送まるわかりガイド：<a href="https://naokijodan.github.io/ebay-economy-shipping-guide/" target="_blank" rel="noopener">https://naokijodan.github.io/ebay-economy-shipping-guide/</a></p>
+    <p class="link-line">👉 SpeedPAK Economy EU27カ国拡大への対応：<a href="https://naokijodan.github.io/ebay-eu27-economy-guide/" target="_blank" rel="noopener">https://naokijodan.github.io/ebay-eu27-economy-guide/</a></p>
+    <p class="link-line">👉 EU・イギリス宛の注文が「しきい値」を超えたら？：<a href="https://naokijodan.github.io/ebay-eu-over150-guide/" target="_blank" rel="noopener">https://naokijodan.github.io/ebay-eu-over150-guide/</a></p>
+  </section>
+
+  <section class="card" id="dev">
+    <h2>開発中の拡張機能</h2>
+    <p>当日は「枠だけ」の紹介です。eBay管理ツール（Chrome拡張機能・名前は検討中）は、自分のブラウザからeBayのAPIに直接つないで、出品やシッピングポリシーなどを確認・管理できるツールです。</p>
+    <ul class="intro-list">
+      <li>鍵も情報も自分の手元だけに置き、こちらのサーバーは通しません（この方式で問題ないとeBayに確認済みです）。</li>
+      <li>まずモニターを2〜3人募集して使ってもらい、その後に公開を判断します。</li>
+    </ul>
+  </section>
+
+  <section class="card" id="links">
+    <h2>関連リンク一覧</h2>
+    <ul class="links">
+      <li>税関申告価額の解説記事：<a href="https://naokijodan.github.io/ebay-declared-value-guide/" target="_blank" rel="noopener">https://naokijodan.github.io/ebay-declared-value-guide/</a></li>
+      <li>けんさく君（Chrome ウェブストア）：<a href="https://chromewebstore.google.com/detail/lglbjdkepaokbfgeapogenjmadlmkbnk" target="_blank" rel="noopener">https://chromewebstore.google.com/detail/lglbjdkepaokbfgeapogenjmadlmkbnk</a></li>
+      <li>テラピークのJapan絞り込みガイド：<a href="https://naokijodan.github.io/ebay-research-japan-filter-guide/" target="_blank" rel="noopener">https://naokijodan.github.io/ebay-research-japan-filter-guide/</a></li>
+      <li>利益早見表（ウェブ版）：<a href="https://naokijodan.github.io/profit-matrix/" target="_blank" rel="noopener">https://naokijodan.github.io/profit-matrix/</a></li>
+      <li>利益早見表（Chrome ウェブストア）：<a href="https://chromewebstore.google.com/detail/eieeoceidiibbdahkjcnichcdmieghel" target="_blank" rel="noopener">https://chromewebstore.google.com/detail/eieeoceidiibbdahkjcnichcdmieghel</a></li>
+      <li>エコノミー発送まるわかりガイド：<a href="https://naokijodan.github.io/ebay-economy-shipping-guide/" target="_blank" rel="noopener">https://naokijodan.github.io/ebay-economy-shipping-guide/</a></li>
+      <li>SpeedPAK Economy EU27カ国拡大への対応：<a href="https://naokijodan.github.io/ebay-eu27-economy-guide/" target="_blank" rel="noopener">https://naokijodan.github.io/ebay-eu27-economy-guide/</a></li>
+      <li>EU・イギリス宛の注文が「しきい値」を超えたら？：<a href="https://naokijodan.github.io/ebay-eu-over150-guide/" target="_blank" rel="noopener">https://naokijodan.github.io/ebay-eu-over150-guide/</a></li>
+      <li>拡張機能の一覧：<a href="https://naokijodan.github.io/bulk-tools-guide/extensions.html" target="_blank" rel="noopener">https://naokijodan.github.io/bulk-tools-guide/extensions.html</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>出典一覧</strong></p>
+  <ul>
+    <li>日本郵便 お知らせ（続報4、2026年10月1日）：<a href="https://www.post.japanpost.jp/service/send/oversea/information/2026/1001_01.html" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/2026/1001_01.html</a></li>
+    <li>日本郵便 国際郵便料金の一部改定のお知らせ（2027年2月1日から）：<a href="https://www.post.japanpost.jp/service/send/oversea/information/fee_revision_2027/" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/fee_revision_2027/</a></li>
+    <li>同・新料金表（PDF）：<a href="https://www.post.japanpost.jp/service/send/oversea/information/fee_revision_2027/charges.pdf" target="_blank" rel="noopener">https://www.post.japanpost.jp/service/send/oversea/information/fee_revision_2027/charges.pdf</a></li>
+  </ul>
+  <p>数値は2026年10月12日時点の公式資料から転記しています。最新は公式ページで確認してください。</p>
+  <p class="center">作成日 2026-10-12　／　セミナー開催日 2026-10-25</p>
+</footer>
+
+</body>
+</html>
