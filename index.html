@@ -46,6 +46,7 @@
   ol.toc li { margin-bottom: 6px; }
   a { color: var(--accent); }
   .small-note { font-size: var(--fs-note); color: #666; margin: 8px 0; }
+  figure.shot { margin: 12px 0; }
   .source-note { font-size: var(--fs-note); color: #666; margin: 8px 0 0 0; }
   .point-box {
     background: var(--accent-light); border: var(--border-w) solid var(--accent); border-radius: var(--radius-box);
@@ -116,7 +117,7 @@
   <h1>10月25日セミナー 発表内容のご案内</h1>
   <p class="subtitle">4つの話題（税関申告価額／けんさく君／利益早見表／シッピングポリシーの変更）と、開発中の拡張機能についてご紹介します。</p>
   <p class="notice">開催時間・場所は主催者の案内をご確認ください</p>
-  <p class="notice">発表スライド（33枚）はこちら 👉 <a href="https://claude.ai/artifact/2bTBcGJmsVuF2w7LTJF9k4" target="_blank" rel="noopener">https://claude.ai/artifact/2bTBcGJmsVuF2w7LTJF9k4</a></p>
+  <p class="notice">発表スライド（34枚）はこちら 👉 <a href="https://claude.ai/artifact/2bTBcGJmsVuF2w7LTJF9k4" target="_blank" rel="noopener">https://claude.ai/artifact/2bTBcGJmsVuF2w7LTJF9k4</a></p>
 </header>
 
 <main>
@@ -144,8 +145,21 @@
 
   <section class="card" id="part1">
     <h2>PART1　税関申告価額</h2>
-    <p>送料込みで売った商品を、税関にいくらで申告するかのお話です。考え方、発送先ごとのメリット、計算の手順、注意点の順に説明します。</p>
+    <p>送料込みで売った商品を、税関にいくらで申告するかのお話です。きっかけ、考え方、発送先ごとのメリット、計算の手順、注意点の順に説明します。</p>
 
+    <h3>なぜ気づいたか</h3>
+    <figure class="shot">
+      <a href="images/cpass-order-declared-unit-price.png" target="_blank" rel="noopener"><img src="images/cpass-order-declared-unit-price.png" alt="CPaSSの注文画面。上の商品価格が下の(申告)単価にそのまま入り、バイヤーが支払った送料は反映されていない" style="max-width:100%;height:auto;border:1px solid #e3ded3;border-radius:8px"></a>
+      <p class="small-note">CPaSS の注文画面。上に出ている「商品価格」が、下の「(申告)単価」にそのまま入ります。右の「バイヤーが支払った送料」は反映されません。</p>
+    </figure>
+    <ol class="points">
+      <li><strong>送料込みだと、送料の分まで申告される。</strong>商品価格に送料を含めて出品すると、その合計が申告単価になります。</li>
+      <li><strong>同じ商品でも、設定で関税が変わる？</strong>送料の欄に送料と関税を入れて出品すれば、申告額が下がって関税が安くなるのではないか。eBay がすすめる送料込みは、不利になるだけではないか。そんな疑問が出ました。</li>
+      <li><strong>オレンジコネックスに問い合わせた。</strong>回答は、申告価格は関税や送料を引いた価格、つまり商品そのものの代金が正しい、というものでした。これが、この章の結論につながっています。</li>
+    </ol>
+    <p class="small-note">この回答は発表者が問い合わせて受けたもので、公式の案内として公開されているものではありません。最近あらためて担当者に「もっと大きくアナウンスしては」と尋ねたところ、価格や送料の設定はセラーごとに千差万別で方法を指定できないため、セラー側で調べてもらい、問い合わせがあれば回答する、という方針とのことでした。</p>
+
+    <h3>要点</h3>
     <ol class="points">
       <li><strong>申告するのは、送料を抜いた商品代金です。</strong>販売価格をそのまま申告するのは誤りで、送料の分まで課税の対象になってしまいます。「運送申告価額」（配送会社に申告する、補償の上限を決める金額）と「税関申告価額」（税関に申告する、関税などを決める基準の金額）は別物です。米国税関（CBP）の資料でも、課税の基準は国際輸送・保険などの費用を除いた、買い手が売り手に支払う総額とされています。</li>
       <li><strong>送料を抜くと、発送先ごとにメリットがあります。</strong>参考例では、販売価格85ドルの内訳が商品代65ドルと送料20ドルで、税関申告価額は 85 − 20 ＝ 65ドルです（関税18ドルは販売価格に入れず、シッピングポリシーの送料の欄で別に請求します）。米国向けは、送料20ドル × 関税率12% × 150円 ＝ 360円分の関税がかからなくなります。送料100ドルなら1,800円で、送料が高いほど差も大きくなります。米国以外は国によって計算方法が異なります。EU・英国は税関が輸送費を別に加算するため、送料を混ぜて申告すると重なって高い課税価格になるおそれがあります（EU関税法典第71条(1)(e)）。金額はすべて説明用の参考例です。</li>
