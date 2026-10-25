@@ -35,6 +35,14 @@
   header.page-title h1 { margin: 0; font-size: 22px; line-height: 1.5; }
   header.page-title .subtitle { margin: 10px auto 0; max-width: 760px; font-size: var(--fs-body); line-height: 1.7; }
   header.page-title .notice { margin: 12px auto 0; font-size: var(--fs-note); background: rgba(255,255,255,0.18); display: inline-block; padding: 4px 12px; border-radius: 999px; }
+  header.page-title .slides-cta { display: flex; align-items: center; gap: 18px; max-width: 760px; margin: 18px auto 0; padding: 14px; background: #fff; color: var(--navy); border-radius: var(--radius-box); text-decoration: none; text-align: left; box-shadow: 0 6px 18px rgba(0,0,0,0.18); }
+  header.page-title .slides-cta:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.28); }
+  header.page-title .slides-cta img { flex: none; width: 240px; height: auto; border-radius: 8px; border: 1px solid #ddd; }
+  .slides-cta-text { display: flex; flex-direction: column; gap: 4px; }
+  .slides-cta-label { align-self: flex-start; background: #c2410c; color: #fff; font-size: var(--fs-note); font-weight: bold; padding: 2px 10px; border-radius: 999px; }
+  .slides-cta-title { font-size: 22px; font-weight: bold; color: var(--accent); text-decoration: underline; }
+  .slides-cta-sub { font-size: var(--fs-label); color: #444; }
+  @media (max-width: 600px) { header.page-title .slides-cta { flex-direction: column; text-align: center; } header.page-title .slides-cta img { width: 100%; } .slides-cta-label { align-self: center; } .slides-cta-title { font-size: 19px; } }
   main { max-width: 1100px; margin: 0 auto; padding: 16px; }
   section.card { background: #fff; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 24px 32px; margin-bottom: 20px; }
   h2 { color: var(--accent); font-size: var(--fs-heading); border-left: 6px solid var(--accent); padding-left: 10px; margin-top: 0; }
@@ -117,7 +125,14 @@
   <h1>10月25日セミナー 発表内容のご案内</h1>
   <p class="subtitle">4つの話題（税関申告価額／けんさく君／利益早見表／シッピングポリシーの変更）についてご紹介します。</p>
   <p class="notice">開催時間・場所は主催者の案内をご確認ください</p>
-  <p class="notice">当日の発表スライド（33枚）は PDF で見られます 👉 <a href="slides.pdf" target="_blank" rel="noopener">スライドを開く（PDF）</a></p>
+  <a class="slides-cta" href="slides.pdf" target="_blank" rel="noopener">
+    <img src="images/slides-cover.jpg" alt="発表スライドの表紙" width="320" height="180">
+    <span class="slides-cta-text">
+      <span class="slides-cta-label">まずはこちら</span>
+      <span class="slides-cta-title">発表スライドを見る（PDF・33枚）</span>
+      <span class="slides-cta-sub">図と画面つきで、この記事より分かりやすくまとまっています</span>
+    </span>
+  </a>
 </header>
 
 <main>
